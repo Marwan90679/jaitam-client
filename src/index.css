@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+button{
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.pika-single {
+  z-index: -50 !important;
+  position: absolute !important;
+}
+
+ 
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
