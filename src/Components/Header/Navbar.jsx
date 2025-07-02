@@ -81,7 +81,7 @@ const Navbar = () => {
 
   if (loading) return <Loading></Loading>;
   return (
-    <div className="navbar shadow-sm     border-b-3   md:border-b-5  bg-[#F3F3E0]  ">
+    <div className="navbar shadow-sm   sticky top-0 z-20  border-b-3   md:border-b-5  bg-[#F3F3E0]  ">
       {/* mobile device */}
       <div className="navbar-start">
         <div className="dropdown">

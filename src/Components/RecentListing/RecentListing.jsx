@@ -14,25 +14,26 @@ const RecentListing = () => {
       setLoading(false)
     })
   },[])
+  
   if(loading)return <Loading></Loading>
   return (
     <div
-      className="relative bg-cover bg-center bg-no-repeat"
+      className=" relative bg-cover bg-center bg-no-repeat min-h-screen"
       style={{
-        backgroundImage: `url('https://i.ibb.co/gZ9Zxskk/pexels-koolshooters-6494663.jpg')`,
+        backgroundImage: `url('https://i.ibb.co/39T23HW2/pexels-koolshooters-6494663-1-1.jpg')`,
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0  bg-opacity-60 z-0"></div>
 
-      <div className="relative z-10 px-4 py-12 md:px-8 lg:px-16">
+      <div className="relative z-10 px-6 py-16 md:px-20">
         <div className="text-center text-white mb-10">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl">
             Recent Listings
           </h1>
         </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6">
           {data?.map((car, index) => (
             <div
               key={index}
@@ -41,6 +42,7 @@ const RecentListing = () => {
               <img
                 src={car.image}
                 alt={car.model}
+                loading="lazy"
                 className="w-full h-68 object-cover"
               />
               <div className="p-4">

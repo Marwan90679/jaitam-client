@@ -9,6 +9,7 @@ const AvailableCarsCard = ({ car }) => {
       <div>
         <img
           className="w-full h-60 object-cover rounded-t-lg"
+          loading="lazy"
           src={image}
           alt="Car"
         />

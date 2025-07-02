@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const AddCars = () => {
   const { user, setLoading} = use(AuthContext);
   const sectionStyle = {
-    backgroundImage: `url('https://i.ibb.co/fz70qnzJ/pexels-hannaphotography-7730177.jpg')`,
+    backgroundImage: `url('https://i.ibb.co/1SxL8L0/pexels-hannaphotography-7730177-1-1.jpg')`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center ",
     backgroundSize: "cover",

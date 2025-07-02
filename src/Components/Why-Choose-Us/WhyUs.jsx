@@ -27,17 +27,16 @@ const WhyUs = () => {
 
   
   const sectionStyle = {
-    backgroundImage: `url('https://i.ibb.co/VYsmbGfx/pexels-pedro-figueras-202443-626155.jpg')`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.ibb.co/RTqDg0X7/pexels-bylukemiller-19711655-1.jpg')`,
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center bottom',
+    backgroundPosition: 'center left',
     backgroundSize: 'cover',
-    
   };
 
   return (
-    <div className="py-16 px-6 md:px-20 min-h-screen" style={sectionStyle}>
-      <div className="text-center mb-12 lg:mt-26 lg:mb-32">
-        <h2 className="text-4xl md:text-5xl font-bold text-white">
+    <div className="py-16 px-6 md:px-20 lg:min-h-screen" style={sectionStyle}>
+      <div className="text-center mb-12  lg:pb-32">
+        <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl text-white">
           Why Ride With Us?
         </h2>
         <p className="text-black mt-2 text-lg max-w-2xl mx-auto bg-white bg-opacity-70 px-4 py-2 rounded-xl inline-block">

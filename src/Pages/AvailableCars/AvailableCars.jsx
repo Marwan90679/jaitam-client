@@ -20,7 +20,7 @@ const AvailableCars = () => {
   }, []);
 
   const sectionStyle = {
-    backgroundImage: `url('https://i.ibb.co/zWP9t0zw/pexels-koolshooters-6494923.jpg')`,
+    backgroundImage: `url('https://i.ibb.co/SXk3gfzp/pexels-koolshooters-6494923-1-1.jpg')`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "left center",
     backgroundSize: "cover",
@@ -31,7 +31,7 @@ const AvailableCars = () => {
   const noResults = data.length === 0;
 
   return (
-    <div style={sectionStyle} className="min-h-screen">
+    <div style={sectionStyle} className="min-h-screen md:px-20 px-6 ">
       <h3 className="text-2xl text-white lg:text-black text-center lg:font-bold font-semibold lg:py-5 py-3 lg:text-5xl">
         Available Cars
       </h3>
