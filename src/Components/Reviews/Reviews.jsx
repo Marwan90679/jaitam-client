@@ -48,7 +48,7 @@ const Reviews = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible" 
-        viewport={{ once: true, amount: 0.4 }} 
+        viewport={{ once: true, amount: 0.3 }} 
       >
         {originalReviews.map((review, idx) => ( 
           <motion.div

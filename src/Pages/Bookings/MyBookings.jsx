@@ -44,20 +44,24 @@ const MyBookings = () => {
       confirmButtonText: "Yes, cancel it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire({
-          title: "Canceled",
-          text: "Your booking has been canceled",
-          icon: "success",
+        fetch(`https://jaitam-backend.vercel.app/cancel/${id}`, {
+          method: "PATCH",
+        })
+        .then((res) => res.json())
+        .then((data) => {
+         if(data.deletedCount){
+          Swal.fire({
+            title: "Canceled",
+            text: "Your booking has been canceled",
+            icon: "success",
+          });
+         }
         });
+      
       }
     });
-    fetch(`https://jaitam-backend.vercel.app/cancel/${id}`, {
-      method: "PATCH",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+  
+    
   };
   const handleModify = (id) => {
     document.getElementById("date_modal").showModal();

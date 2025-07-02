@@ -15,6 +15,8 @@ import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import AddCars from "./Pages/AddCars/AddCars";
 import CarDetails from "./Pages/CarDetails/CarDetails";
 import Error from "./Pages/Error/Error";
+import Contact from "./Pages/Contact/Contact";
+import AboutUs from "./Pages/AboutsUs/AboutUs";
 
 const router = 
 createBrowserRouter([
@@ -27,6 +29,14 @@ createBrowserRouter([
         Component:Home,
        
       },
+    {
+      path:'about-us',
+      Component:AboutUs
+    },
+    {
+      path:'contact-us',
+      Component:Contact
+    },
     {
       path:'signIn',
       Component:SignIn

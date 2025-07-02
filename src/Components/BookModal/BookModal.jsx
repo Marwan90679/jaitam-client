@@ -29,7 +29,7 @@ const BookModal = ({ carData, loading }) => {
     day: "numeric",
   });
   const handleBooking = async () => {
-    if (!email) {
+    if (!user) {
       toast.error("Please login before booking.", {
         icon: "⚠",
         className: "bg-red-500 text-white font-medium rounded shadow-lg",
@@ -45,7 +45,7 @@ const BookModal = ({ carData, loading }) => {
       return;
     }
 
-    // ✅ Check if booking already exists and stop here if so
+   
     const check = await fetch(
       `https://jaitam-backend.vercel.app/check-bookings?email=${email}&carId=${_id}`
     )
@@ -233,7 +233,6 @@ const BookModal = ({ carData, loading }) => {
               Close
             </button>
             <button
-              disabled={!email}
               onClick={handleBooking}
               className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm px-6 py-2 rounded-lg transition duration-200"
             >

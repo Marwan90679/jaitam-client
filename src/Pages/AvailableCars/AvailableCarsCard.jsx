@@ -41,9 +41,10 @@ const AvailableCarsCard = ({ car }) => {
           </span>
           <Link
             to={`/carDetails/${_id}`}
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="px-4 py-2 my-6  bg-[#F3F3E0] hover:bg-[#777772] hover:text-white rounded-full font-semibold transition
+                               shadow-md hover:shadow-lg cursor-pointer relative"
           >
-            Book Now
+            View Details
           </Link>
         </div>
       </div>

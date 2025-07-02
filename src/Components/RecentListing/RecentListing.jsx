@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { TimeAgo } from "../../Utilities/TimeAgo";
 import Loading from "../../Pages/Loading/Loading";
+import { Link } from "react-router";
 
 const RecentListing = () => {
-  const[data,setData]=useState()
-  const[loading,setLoading]=useState(true)
-  useEffect(()=>{
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
     setLoading(true);
-    fetch('https://jaitam-backend.vercel.app')
-    .then(res=>res.json())
-    .then(data=>{
-      setData(data);
-      setLoading(false)
-    })
-  },[])
-  
-  if(loading)return <Loading></Loading>
+    fetch("https://jaitam-backend.vercel.app")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <Loading></Loading>;
   return (
     <div
       className=" relative bg-cover bg-center bg-no-repeat min-h-screen"
@@ -62,15 +63,30 @@ const RecentListing = () => {
                 <div className="flex justify-between items-center">
                   <span
                     className={`px-3  rounded-full  font-semibold ${
-                      car.availability=="available"? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"
+                      car.availability == "available"
+                        ? "bg-green-100 text-green-700"
+                        : "bg-red-100 text-red-700"
                     }`}
                   >
-                    {car.availability=="available"?"Available":"Unavailable"}
+                    {car.availability == "available"
+                      ? "Available"
+                      : "Unavailable"}
                   </span>
                   <span className="text-gray-900 text-sm text-shadow-xl">
                     {TimeAgo(car.datePosted)}
                   </span>
                 </div>
+             <div className="flex justify-center">
+             <button className="pb-4 pt-6 ">
+                  <Link
+                    to={`/carDetails/${car._id}`}
+                    className="px-4 py-2 my-6  bg-[#F3F3E0] hover:bg-[#777772] hover:text-white rounded-full font-semibold transition
+                               shadow-md hover:shadow-lg cursor-pointer relative"
+                  >
+                    View Details
+                  </Link>
+                </button>
+             </div>
               </div>
             </div>
           ))}

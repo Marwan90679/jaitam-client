@@ -60,7 +60,7 @@ const MyCars = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount) {
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire("Deleted!", "Your car has been deleted.", "success");
               setReRender(!reRender);
             }
           });

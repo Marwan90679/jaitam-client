@@ -68,52 +68,58 @@ const AvailableCars = () => {
             </div>
           ) : (
             <div className="max-w-screen-lg mx-auto px-2 pb-10">
-              {data.map((car) => (
-                <div
-                  key={car._id}
-                  className="flex flex-wrap md:flex-nowrap items-center justify-between gap-4 py-4 px-4 rounded-xl bg-white bg-opacity-90 shadow-sm mb-4"
-                >
-                  {/* Image + Basic Info */}
-                  <div className="flex items-center gap-3 min-w-[180px]">
-                    <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-100 shrink-0">
-                      <img
-                        src={car.image}
-                        alt={car.model}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="text-sm">
-                      <p className="font-semibold text-slate-900">
-                        {car.model}
-                      </p>
-                      <p className="text-slate-500">
-                        Reg:{" "}
-                        <span className="text-slate-800">
-                          {car.registration}
-                        </span>
-                      </p>
-                    </div>
+            {data.map((car) => (
+              <div
+                key={car._id}
+                className="grid grid-cols-2 md:grid-cols-4 gap-4 py-3 px-4 rounded-lg bg-white bg-opacity-90 shadow-sm mb-3 border border-gray-100"
+              >
+                {/* Image + Basic Info */}
+                <div className="col-span-2 md:col-span-1 flex items-center gap-3">
+                  <div className="w-14 h-14 rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                    <img
+                      src={car.image}
+                      alt={car.model}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  {/* Location */}
-                  <div className="text-xs md:text-sm text-slate-700 min-w-[120px]">
-                    <p className="font-medium text-slate-500">Location</p>
-                    <p>{car.location}</p>
-                  </div>
-
-                  {/* Bookings */}
-                  <div className="text-xs md:text-sm text-slate-700 min-w-[80px]">
-                    <p className="font-medium text-slate-500">Bookings</p>
-                    <p>{car.bookingCount}</p>
-                  </div>
-
-                  {/* Price */}
-                  <div className="text-xs md:text-sm text-slate-700 min-w-[80px]">
-                    <p className="font-medium text-slate-500">Price/Day</p>
-                    <p className="text-slate-900 font-medium">${car.price}</p>
+                  <div className="text-sm">
+                    <p className="font-semibold text-gray-900 truncate">
+                      {car.model}
+                    </p>
+                    <p className="text-gray-500 text-xs">
+                      Reg: <span className="text-gray-700">{car.registration}</span>
+                    </p>
                   </div>
                 </div>
-              ))}
-            </div>
+                
+                {/* Location */}
+                <div className="col-span-1 flex flex-col justify-center">
+                  <p className="text-xs text-gray-500 font-medium">Location</p>
+                  <p className="text-sm text-gray-700 truncate">{car.location}</p>
+                </div>
+          
+                {/* Bookings */}
+                <div className="col-span-1 flex flex-col justify-center">
+                  <p className="text-xs text-gray-500 font-medium">Bookings</p>
+                  <p
+            className={`text-xs w-20  font-medium mt-2 inline-block rounded-md py-1.5 px-2 ${
+              car.availability === "available"
+                ? "bg-green-100 text-green-700"
+                : "bg-red-100 text-red-700"
+            }`}
+          >
+            {car.availability === "available" ? "Available" : "Unavailable"}
+          </p>
+                </div>
+          
+                {/* Price */}
+                <div className="col-span-2 md:col-span-1 flex flex-col justify-center">
+                  <p className="text-xs text-gray-500 font-medium">Price/Day</p>
+                  <p className="text-sm font-semibold text-gray-900">${car.price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
           )}
         </>
       )}

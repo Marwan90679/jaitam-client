@@ -7,6 +7,8 @@ import { RiApps2AddLine } from "react-icons/ri";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { SiMyget } from "react-icons/si";
 import { IoMdBookmarks } from "react-icons/io";
+import { MdContactSupport } from "react-icons/md";
+import { BsFillInfoSquareFill } from "react-icons/bs";
 import Loading from "../../Pages/Loading/Loading";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
@@ -48,6 +50,18 @@ const Navbar = () => {
         </li>
       </div>
     ),
+    <li key="5">
+      <Link to="/about-us">
+      <BsFillInfoSquareFill size={20}/>
+        About Us
+      </Link>
+    </li>,
+    <li key="6">
+      <Link to="/contact-us">
+      <MdContactSupport size={20}/>
+        Contact
+      </Link>
+    </li>
   ];
   const handleSignOut = () => {
     Swal.fire({

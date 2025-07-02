@@ -1,6 +1,7 @@
 import React, { use } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import Swal from "sweetalert2";
+import { Link } from "react-router";
 
 const AddCars = () => {
   const { user, setLoading} = use(AuthContext);
@@ -12,8 +13,26 @@ const AddCars = () => {
   };
 
   const handleAddCars = (e) => {
-    setLoading(true);
     e.preventDefault();
+    if (!user) {
+      Swal.fire({
+        title: "<strong>Sign In to add cars</strong>",
+        icon: "info",
+        html: `
+          You need to <b>Sign In</b> to add cars
+        `,
+        showCloseButton: true,
+        showCancelButton: false,
+        focusConfirm: false,
+        confirmButtonText: 'Take me there',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/signin'; 
+        }
+      });
+      }
+    setLoading(true);
+   
     const form = e.target;
     const formData = new FormData(form);
     const carData = Object.fromEntries(formData.entries());

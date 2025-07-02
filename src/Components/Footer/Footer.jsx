@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "/logo.png";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className=" border-t-3   md:border-t-5 border-black footer footer-horizontal footer-center bg-[#F3F3E0]  text-primary-content p-10">
@@ -14,15 +15,15 @@ const Footer = () => {
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4 text-black text-xl">
-          <a>
+          <Link to='https://www.facebook.com'>
             <FaFacebook></FaFacebook>
-          </a>   
-          <a>
+          </Link>   
+          <Link to='https://www.instagram.com'>
             <FaInstagram></FaInstagram>
-          </a>   
-          <a>
+          </Link>   
+          <Link to='https://www.x.com'>
             <FaTwitter></FaTwitter>
-          </a>   
+          </Link>   
             
         </div>
       </nav>
